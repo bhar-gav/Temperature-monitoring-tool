@@ -1,0 +1,15 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+LiquidCrystal I2C
+
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+# Automatically added based on includes:
+DHT sensor library
+
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+Blynk@wokwi:ff31ef6c8e4f64cd5acd23b415d84f7e5555fc1f

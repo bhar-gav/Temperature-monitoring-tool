@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Dikrama",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 43.1, "left": -5, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -118.4,
+      "left": -109.6,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 44.4, "left": 138.2, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 129.6,
+      "left": 133.85,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 38.7,
+      "left": 186.6,
+      "attrs": { "temperature": "38.9" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-60.67", "v336.24", "h285.33", "v-58.67" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-47.34", "v279.74" ] ],
+    [ "lcd1:SDA", "esp:D21", "orange", [ "h-24", "v94.07", "h239.33", "v80.67" ] ],
+    [ "lcd1:SCL", "esp:D22", "orange", [ "h-11.34", "v95.24", "h218.67", "v41.33" ] ],
+    [ "led1:A", "r1:1", "gold", [ "v0" ] ],
+    [ "esp:D15", "r1:2", "cyan", [ "h0" ] ],
+    [ "esp:GND.1", "led1:C", "black", [ "h0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "esp:D14", "dht1:SDA", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
